@@ -1,0 +1,3 @@
+# Falta assistir:
+- Criando uma plataorma de pergundas como yahoo repostas 
+    4. Buscando perguntas no banco de dados

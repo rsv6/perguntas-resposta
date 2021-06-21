@@ -1,0 +1,30 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    <div class="container">
+        <hr>
+        <h1>Titulo: <%= pergunta.titulo %></h1>
+        <br>
+        <h3>Descricao: <%= pergunta.descricao %></h3>
+        <hr>
+        <form method="POST" action="/responder">
+          <label>Resposta:</label>
+          <textarea class="form-control" name="corpo" placeholder="Digite sua resposta"></textarea>
+          <br>
+          <input type="hidden" name="pergunta" value="<%= pergunta.id %>" />
+          <button type="submit" class="btn btn-primary">Responder</button>
+        </form>
+        <hr>
+        <h3>Respostas</h3>
+        <hr>
+        <% respostas.map(r => { %>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              <%= r.corpo %>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+</body>
+<%- include ('partials/footer.ejs') %>
